@@ -1,0 +1,4 @@
+C:/Users/mrfre/CLionProjects/dsi/cmake-build-debug/CMakeFiles/dsi.dir
+C:/Users/mrfre/CLionProjects/dsi/cmake-build-debug/CMakeFiles/testExe.dir
+C:/Users/mrfre/CLionProjects/dsi/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mrfre/CLionProjects/dsi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
