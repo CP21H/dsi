@@ -29,3 +29,31 @@ target_include_directories(project_name PRIVATE C:/path/to/your/library/storage/
 ---
 
 ## Algorithms
+The `algorithms.h` class replicates a handful of the sorting algorithms found in the STL library, notably: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, and Quick Sort. 
+
+Each of these algorithms will be described below, both in terms of explicit functionality when reading the code itself, as well as "what the algorithm is doing" in more plain terms. 
+
+### Bubble Sort
+[ALGORITHM DESCRIPTION] <br>
+[FULL ALGORITHM CODE HERE] <br>
+[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+
+### Selection Sort
+[ALGORITHM DESCRIPTION] <br>
+[FULL ALGORITHM CODE HERE] <br>
+[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+
+### Insertion Sort
+[ALGORITHM DESCRIPTION] <br>
+[FULL ALGORITHM CODE HERE] <br>
+[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+
+### Merge Sort
+[ALGORITHM DESCRIPTION] <br>
+[FULL ALGORITHM CODE HERE] <br>
+[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+
+### Quick Sort
+[ALGORITHM DESCRIPTION] <br>
+[FULL ALGORITHM CODE HERE] <br>
+[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
