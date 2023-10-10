@@ -34,9 +34,30 @@ The `algorithms.h` class replicates a handful of the sorting algorithms found in
 Each of these algorithms will be described below, both in terms of explicit functionality when reading the code itself, as well as "what the algorithm is doing" in more plain terms. 
 
 ### Bubble Sort
-[ALGORITHM DESCRIPTION] <br>
-[FULL ALGORITHM CODE HERE] <br>
-[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+The Bubble Sort algorithm iterates through a list of elements and sorts them by checking two adjacent elements at a time and putting them in order. Generally speaking, this sorting algorithm isn't that efficient, even with smaller data sets, but it is very easy to write and conceptualize. 
+
+**Implementation**
+~~~C++
+template <typename T> void bubble_sort(T arr[], int size) {
+  for (int i = 0; i < size - 1; i++) {
+    for (int j = 0; j < size - i - 1; j++) {
+      if (arr[j] > arr[j+1]) {
+        int temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+}
+~~~
+
+**Line by Line Explanation**
+
+`template <typename T> void bubble_sort(T arr[], int size) {}`
+>`template <typename T>` creates a function that serves as a template for an unknown type, meaning that the function is initialized to take in an unknown type that we refer to as T. This unknown type is used as you would any normal type, as seen, an array of unknown type is passed in as the first parameter, then the size of this array, represented by an Integer, is also passed in as the second parameter.
+
+`for (int i = 0; i < size - 1; i++) {}`
+> Create a standard for loop starting at 0 as long as the iterator, "i", is less than the size minus one, due to iterator indexing at 0.
 
 ### Selection Sort
 [ALGORITHM DESCRIPTION] <br>
