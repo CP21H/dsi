@@ -59,6 +59,17 @@ template <typename T> void bubble_sort(T arr[], int size) {
 `for (int i = 0; i < size - 1; i++) {}`
 > Create a standard for loop starting at 0 as long as the iterator, "i", is less than the size minus one, due to iterator indexing at 0.
 
+~~~C++
+for (int j = 0; j < size - i - 1; j++) {
+  if (arr[j] > arr[j+1]) {
+    int temp = arr[j];
+    arr[j] = arr[j+1];
+    arr[j+1] = temp;
+  }
+}
+~~~
+> This nested for-loop begins at index 0, iterates through the array once switching adjacent elements depending on which is larger. This loop continues for `j < size - i - 1` to account for both a minus one offset with the size from indexing at zero, and then subtracting by `i` in order to keep the elements that have been properly sorted to their proper location. This sorting method implements some standard peeking to the next elements value and a basic switching of values through use of a temporary variable.
+
 ### Selection Sort
 [ALGORITHM DESCRIPTION] <br>
 [FULL ALGORITHM CODE HERE] <br>
