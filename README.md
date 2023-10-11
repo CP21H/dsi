@@ -71,21 +71,33 @@ for (int j = 0; j < size - i - 1; j++) {
 > This nested for-loop begins at index 0, iterates through the array once switching adjacent elements depending on which is larger. This loop continues for `j < size - i - 1` to account for both a minus one offset with the size from indexing at zero, and then subtracting by `i` in order to keep the elements that have been properly sorted to their proper location. This sorting method implements some standard peeking to the next elements value and a basic switching of values through use of a temporary variable.
 
 ### Selection Sort
-[ALGORITHM DESCRIPTION] <br>
-[FULL ALGORITHM CODE HERE] <br>
-[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+The Selection Sort algorithm iterates through a list of elements and sorts them by setting a variable `min` equal to whatever the lowest value is, then it sets the next lowest index to that value by switching the places of the values at `i` and the next lowest index.
+
+**Implementation**
+~~~C++
+template <typename T> void selection_sort(T arr[], int size) {
+  for (int i = 0; i < size - 1; i++) {
+    int min = i;
+    for (int j = i + 1; j < size; j++) {
+      if (arr[min] > arr[j]) {
+        min = j;
+      }
+    }
+    int temp = arr[i];
+    arr[i] = arr[min];
+    arr[min] = temp;
+  }
+}
+~~~
+
+**Line by Line Explanation**
+
 
 ### Insertion Sort
-[ALGORITHM DESCRIPTION] <br>
-[FULL ALGORITHM CODE HERE] <br>
-[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+
 
 ### Merge Sort
-[ALGORITHM DESCRIPTION] <br>
-[FULL ALGORITHM CODE HERE] <br>
-[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+
 
 ### Quick Sort
-[ALGORITHM DESCRIPTION] <br>
-[FULL ALGORITHM CODE HERE] <br>
-[BEGIN DESCRIBING EACH SEGMENT / FEW LINES OF THE CODE WITH CODE BLOCKS UNDERNEATH TO SHOW THOSE SEGMENTS]
+
