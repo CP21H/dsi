@@ -109,6 +109,7 @@ int temp = arr[i];
 arr[i] = arr[min];
 arr[min] = temp;
 ```
+> Set an Integer `min` equal to the iterator `i`. Nested for-loops iterates through the array with an iterator `j` set to the next index that follows `i`, and if the `min` value is greater than what is at the index `j`, set the `min` value to `j`. Afterwards, swap the values of index `i` and index `j`. 
 
 ### Insertion Sort
 
