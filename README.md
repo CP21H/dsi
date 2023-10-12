@@ -92,6 +92,23 @@ template <typename T> void selection_sort(T arr[], int size) {
 
 **Line by Line Explanation**
 
+`template <typename T> void selection_sort(T arr[], int size) {}`
+> Identical function declaration as `bubble_sort`, selection_sort takes in as parameters an array of unknown type, as defined by `T`, and then the Integer size of the array being passed.
+
+`for (int i = 0; i < size - 1; i++) {}`
+> Standard for loop initialization...
+
+```C++
+int min = i;
+for (int j = i + 1; j < size; j++) {
+  if (arr[min] > arr[j]) {
+    min = j;
+  }
+}
+int temp = arr[i];
+arr[i] = arr[min];
+arr[min] = temp;
+```
 
 ### Insertion Sort
 
