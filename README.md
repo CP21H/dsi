@@ -112,7 +112,25 @@ arr[min] = temp;
 > Set an Integer `min` equal to the iterator `i`. Nested for-loops iterates through the array with an iterator `j` set to the next index that follows `i`, and if the `min` value is greater than what is at the index `j`, set the `min` value to `j`. Afterwards, swap the values of index `i` and index `j`. 
 
 ### Insertion Sort
+The Insertion sort algorithm iterates through a list of elements and sorts them by beginning at index one of the array as opposed to index zero, stored in the iterator `i`, while an iterator `j` is set to the index to the left of `i`. As the algorithm iterates through the list, it checks whether the item on the left is greater than the current index value, being `i`, and if it is, swaps their places.
 
+**Implementation**
+~~~C++
+template <typename T> void insertion_sort(T arr[], int size) {
+  for (int i = 1; i < size; i++) {
+    int temp = arr[i];
+    int j = i - 1;
+
+    while (j >= 0 && arr[j] > temp) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = temp;
+  }
+}
+~~~ 
+
+**Line by Line Explanation**
 
 ### Merge Sort
 
