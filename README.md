@@ -54,10 +54,10 @@ template <typename T> void bubble_sort(T arr[], int size) {
 **Line by Line Explanation**
 
 `template <typename T> void bubble_sort(T arr[], int size) {}`
->`template <typename T>` creates a function that serves as a template for an unknown type, meaning that the function is initialized to take in an unknown type that we refer to as T. This unknown type is used as you would any normal type, as seen, an array of unknown type is passed in as the first parameter, then the size of this array, represented by an Integer, is also passed in as the second parameter.
+>`template <typename T>` creates a function that serves as a template for an unknown type, meaning that the function is initialized to take in an unknown type that we refer to as `T`. This unknown type is used as you would any normal type, as seen, an array of unknown type is passed in as the first parameter, then the size of this array, represented by an `Integer`, is also passed in as the second parameter.
 
 `for (int i = 0; i < size - 1; i++) {}`
-> Create a standard for loop starting at 0 as long as the iterator, "i", is less than the size minus one, due to iterator indexing at 0.
+> Create a standard for-loop starting at 0 as long as the iterator, `i`, is less than the size minus one, due to iterator indexing at 0.
 
 ~~~C++
 for (int j = 0; j < size - i - 1; j++) {
@@ -96,7 +96,7 @@ template <typename T> void selection_sort(T arr[], int size) {
 > Identical function declaration as `bubble_sort`, selection_sort takes in as parameters an array of unknown type, as defined by `T`, and then the Integer size of the array being passed.
 
 `for (int i = 0; i < size - 1; i++) {}`
-> Standard for loop initialization...
+> Standard for-loop initialization...
 
 ```C++
 int min = i;
@@ -131,6 +131,29 @@ template <typename T> void insertion_sort(T arr[], int size) {
 ~~~ 
 
 **Line by Line Explanation**
+
+`template <typename T> void insertion_sort(T arr[], int size) {}`
+> Function declaration, similar to all other sorting algorithms. insertion_sort takes in an array of unknown type, defined by `T`, along with the size of this array as an `Integer`.
+
+`for (int i = 1; i < size; i++) {}`
+> Standard for-loop initializiation with iterator `i` starting at 1 instead of the standard 0 in order to account for the `size` offset of 1, allowing the next iterator `j` to serve as the iterator handling the values left of the iterator `i`.  
+
+~~~C++
+int temp = arr[i];
+int j = i - 1;
+~~~
+> Set a temporary variable, `temp` equal to the value in the array at index `i`. Set the iterator `j` equal to the value of `i` - 1. These variables will be used later.
+
+~~~C++
+while (j >= 0 && arr[j] > temp) {
+  arr[j + 1] = arr[j];
+  j--;
+}
+~~~
+> This while-loop does the bulk of the sorting in the Insertion Sort algorithm. In this while-loop, we are saying that as long as the iterator `j` is greater than 0 and the value in the array at index `j` is greater than the value in the `temp` variable, which represents the value which is to the right of `j`, or at `i`. As long as this is satisfied, we will set the value at index `j+1` equal to the value of the array at index `j`, then we decrement the iterator `j` by one so that we can continue to shift values to the right in order to make space for the `temp` value.
+
+`arr[j + 1] = temp;`
+> In the case that j is either no longer greater than or equal to zero, or the value in the array at index `j` is no longer greater than the value of `temp`, set the value in the array at index `j+1` equal to the value we have stored in the `temp` variable. 
 
 ### Merge Sort
 
