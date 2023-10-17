@@ -156,7 +156,69 @@ while (j >= 0 && arr[j] > temp) {
 > In the case that j is either no longer greater than or equal to zero, or the value in the array at index `j` is no longer greater than the value of `temp`, set the value in the array at index `j+1` equal to the value we have stored in the `temp` variable. 
 
 ### Merge Sort
+The Merge Sort algorithm iterates through a list of elements and sorts them by dividing an array into sub-arrays up until there are arrays with only one element in them, then through the use of a separate `merge` function, merges all of the sub-arrays back into the original array.
 
+**Implementation** 
+~~~C++
+template <typename T> void merge(T left_arr[], T right_arr[], T arr[], int main_arr_size) {
+  int left_size = main_arr_size / 2;
+  int right_size = main_arr_size - left_size;
+  int i = 0, l = 0, r = 0;
+
+  while (l < left_size && r < right_size) {
+    if (left_arr[l] < right_arr[r]) {
+      arr[i] = left_arr[l];
+      i++;
+      l++;
+    } else {
+      arr[i] = right_arr[r];
+      i++;
+      r++;
+    }
+  }
+
+  while (l < left_size) {
+    arr[i] = left_arr[l];
+    i++;
+    l++;
+  }
+
+  while (r < right_size) {
+    arr[i] = right_arr[r];
+    i++;
+    r++;
+  }
+}
+
+
+template <typename T> void merge_sort(T arr[], int length) {
+  if (length <= 1) return;
+
+  int main_arr_size = length;
+  int middle = length / 2;
+  int right_arr_size = length - middle;
+  T left_arr[middle];
+  T right_arr[right_arr_size];
+
+  int i = 0;
+  int j = 0;
+
+  for (; i < length; i++) {
+    if (i < middle) {
+      left_arr[i] = arr[i];
+    } else {
+      right_arr[j] = arr[i];
+      j++;
+    }
+  }
+
+  merge_sort(left_arr, middle);
+  merge_sort(right_arr, right_arr_size);
+  merge(left_arr, right_arr, arr, main_arr_size);
+}
+~~~
+
+**Line by Line Explanation**
 
 ### Quick Sort
 
