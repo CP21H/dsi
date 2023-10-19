@@ -220,5 +220,8 @@ template <typename T> void merge_sort(T arr[], int length) {
 
 **Line by Line Explanation**
 
+`template <typename T> void merge(T left_arr[], T right_arr[], T arr[], int main_arr_size) {}`
+> Function declaration for a function called `merge` that is used at the end of the the `merge_sort` algorithm function. Takes in the left-hand side array of unknown type `left_arr[]`, and the right-hand side array of unknown type `right_arr[]` as parameters, along with the main array that we are sorting, also of unknown type, and lastly the size of the main array we are sorting in the form of an `Integer`.
+
 ### Quick Sort
 
