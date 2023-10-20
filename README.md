@@ -223,5 +223,16 @@ template <typename T> void merge_sort(T arr[], int length) {
 `template <typename T> void merge(T left_arr[], T right_arr[], T arr[], int main_arr_size) {}`
 > Function declaration for a function called `merge` that is used at the end of the the `merge_sort` algorithm function. Takes in the left-hand side array of unknown type `left_arr[]`, and the right-hand side array of unknown type `right_arr[]` as parameters, along with the main array that we are sorting, also of unknown type, and lastly the size of the main array we are sorting in the form of an `Integer`.
 
+~~~C++
+int left_size = main_arr_size / 2;
+int right_size = main_arr_size - left_size;
+int i = 0, l = 0, r = 0;
+~~~
+> Here we are setting two `Integer` variables, `left_size` and `right_size`. The `left_size` variable takes the size of the main array, in `main_arr_size`, and divides it by two to get half the number of elements total. To get the size of the right array, we take `main_arr_size` and substract `left_size` from it to get the remaining number of items. This is parallel to how the left and right arrays are made in the `merge_sort` function, where the left array takes the floored value of the main array size divided by 2, and the right array takes the size of either half of the main array or half + 1, to make up for odd numbers.
+
+> We are also setting `Integers: i, l,` and `r` equal to 0, since these will be iterators for the main array, left array (l), and right array (r).
+
+
+
 ### Quick Sort
 
