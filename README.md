@@ -232,7 +232,44 @@ int i = 0, l = 0, r = 0;
 
 > We are also setting `Integers: i, l,` and `r` equal to 0, since these will be iterators for the main array, left array (l), and right array (r).
 
+` while (l < left_size && r < right_size) {}`
+> While-loop which loops as long as we have not iterated through all of the elements in the left array and we haven't iterated through all of the elements in the right array. `l` represents the iterator tied to the left array, and `r` stands for the iterator tied to the right array.
 
+~~~C++
+if (left_arr[l] < right_arr[r]) {
+  arr[i] = left_arr[l];
+  i++;
+  l++;
+}
+~~~
+> If the element in the left array at index `l` is less than the item in the right array at index `r`, we will set the value of the main array at index `i` equal to the left array value at index `l`. We will then increment `i` to continue on to the next available spot to merge elements back into, and also increment `l` to move onto the next left array value since we just placed one value from it back into the main array
+
+~~~C++
+else {
+  arr[i] = right_arr[r];
+  i++;
+  r++;
+}
+~~~
+> Here, we are doing the same thing as the if-statement tied to this else-statement, but for every case where the right array value happens to be less than the left array value at index `l` and `r` respectively.  
+
+~~~C++
+while (l < left_size) {
+  arr[i] = left_arr[l];
+  i++;
+  l++;
+}
+~~~
+> One of two while-loops that iterates through the remaining items in a respective array-side to "clean up" any remaining elements that were not brought in from the previous while-loop, meaning that the condition of one array being iterated over entirely was met. This while-loop specifically adds the remaining elements in the left array over to the main array, implying that the right array was iterated over entirely. 
+
+~~~C++
+while (r < right_size) {
+  arr[i] = right_arr[r];
+  i++;
+  r++;
+}
+~~~
+> Adds the remaining elements in the right array over to the main array, implying that the left array was iterated over entirely. 
 
 ### Quick Sort
 
