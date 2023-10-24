@@ -316,3 +316,27 @@ template <typename T> void quick_sort(T arr[], int const start, int const end) {
   quick_sort(arr, pivot + 1, end);
 }
 ~~~
+
+**Line by Line Explanation**
+
+`template <typename T> int partition (T arr[], int const start, int const end) {}`
+> Function declaration for a function called `partition` of return type `Integer`. This function takes in as parameters an array of unknown type, represented as `T`, along with two `Integers` of an index `start` and an index `end`. This `partition` function serves the purpose of "partitioning" elements within the array passed in as they relate to the `pivot`, partitioning the array into a side less than, and a side greater than, the `pivot`.
+
+`int pivot = arr[end];`
+> Set the `pivot`, the value we will partition our array relative to, equal to the last element of the array, represented by index `end`. It should be noted that this variable is used to represent the **value** of the pivot we are starting off with, and another `Integer` used later on will serve as the *actual* pivot that is used in the next iteration of quick_sort.
+
+`int i = start - 1;`
+> `i` is initialized to be one less than the starting index. `i` will be used to keep track of the index where elements less than the `pivot` should be placed.
+
+`for (int j = start; j <= end; j++) {}`
+> for-loop starting at the starting index, `int j = start;`, to the ending index, `j <= end;`, iterating throughout the entire array. This for-loop continues until all elements in the range `start` to `end` are partitioned based on their relationship to the pivot. 
+
+~~~C++
+if (arr[j] < pivot) {
+  i++;
+  int temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+~~~
+> If at some point in the array the value of the element at index `j` is less than the value of the `pivot`, then we will increment `i` to move the `pivot` position, since `i` represents the `pivot`. We then swap the elements of `j` and `i`.
