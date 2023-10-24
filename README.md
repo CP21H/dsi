@@ -272,4 +272,47 @@ while (r < right_size) {
 > Adds the remaining elements in the right array over to the main array, implying that the left array was iterated over entirely. 
 
 ### Quick Sort
+The Quick Sort algorithm iterates through a list of elements and sorts them by selecting a `pivot-point` in the array we are sorting, usually the last element in the array. The algorithm then sorts the array by creating sections of the array that revolve around the pivot, meaning that on the left side will be unsorted elements that are all less than the pivot, and on the right, we will have unsorted elements larger than the pivot value. This process continues recursively in the quick_sort function itself. Below is a visualization, numbers within brackets [] represent the pivot.
 
+**Visualization**
+~~~
+6 3 7 5 1 2 [4]
+             |
+     3 1 [2] 4 6 7 [5]
+          |         |
+        1 2 3       5 7 [6]
+                         |
+                         6 7
+~~~
+
+**Implementation** 
+~~~C++
+template <typename T> int partition (T arr[], int const start, int const end) {
+  int pivot = arr[end];
+  int i = start - 1;
+
+  for (int j = start; j <= end; j++) {
+    if (arr[j] < pivot) {
+      i++;
+      int temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+  }
+
+  i++;
+  int temp = arr[i];
+  arr[i] = arr[end];
+  arr[end] = temp;
+
+  return i;
+}
+
+template <typename T> void quick_sort(T arr[], int const start, int const end) {
+  if (end <= start) return;
+
+  int pivot = partition(arr, start, end);
+  quick_sort(arr, start, pivot - 1);
+  quick_sort(arr, pivot + 1, end);
+}
+~~~
