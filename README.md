@@ -339,4 +339,14 @@ if (arr[j] < pivot) {
   arr[j] = temp;
 }
 ~~~
-> If at some point in the array the value of the element at index `j` is less than the value of the `pivot`, then we will increment `i` to move the `pivot` position, since `i` represents the `pivot`. We then swap the elements of `j` and `i`.
+> If at some point in the array the value of the element at index `j` is less than the value of the `pivot`, then we will increment `i` to move the `pivot` position, since `i` represents the new `pivot`. We then swap the elements of `j` and `i`.
+
+~~~C++
+i++;
+int temp = arr[i];
+arr[i] = arr[end];
+arr[end] = temp;
+
+return i;
+~~~
+> Move the `pivot` element to its final sorted position by swapping it with the element at the `i` index. Then return the index of the pivot element, which we will then use to divide the array into two subarrays in the quicksort function. 
