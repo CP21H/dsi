@@ -350,3 +350,18 @@ arr[end] = temp;
 return i;
 ~~~
 > Move the `pivot` element to its final sorted position by swapping it with the element at the `i` index. Then return the index of the pivot element, which we will then use to divide the array into two subarrays in the quicksort function. 
+
+`template <typename T> void quick_sort(T arr[], int const start, int const end) {}`
+> Function declaration for the main quick sort algorithm. This function takes in as parameters an array of unknown type, denoted by `T`, a constant `Integer` index `start` and a constant `Integer` index `end`, denoting the start and end of the array respectively. 
+
+`if (end <= start) return;`
+>  Base case of the quick sort algorithm. If the range to be sorted consists of one or zero elements, the function returns as there's no need to sort further. 
+
+`int pivot = partition(arr, start, end);`
+> We set an `Integer` `pivot` equal to a function call of `partition` from the range `start` to `end`. This is how we find the index of the `pivot`.
+
+`quick_sort(arr, start, pivot - 1);`
+> The `quick_sort` function calls itself recursively on the subarray before the pivot.
+
+`quick_sort(arr, pivot + 1, end);`
+> The `quick_sort` function calls itself recursively on the subarry after the pivot.
