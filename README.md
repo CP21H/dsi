@@ -365,3 +365,16 @@ return i;
 
 `quick_sort(arr, pivot + 1, end);`
 > The `quick_sort` function calls itself recursively on the subarry after the pivot.
+
+---
+
+## Linked List 
+The `linked_list` class replicates the workings of a singly-linked list, meaning that each `Node` in it, stores both data and an address pointer to the next `Node`, whereas a doubly-linked list would have both an address to the _next_ node and the node _before_ the current node. Linked-lists are easier to insert into and delete out of than a standard array. This is done through the way linked-lists handle storage. Individual elements or `Nodes`, instead of taking up the next space in memory, are organized across memory in relation to a previous node; in the case of singly-linked lists. 
+
+Linked-lists generally waste no to little memory but tend to overall have a greater memory usage. A slight disadvantage of them is also that accessing and searching is more time consuming, with a time complexity of O(n), whereas accessing an array has time complexity of O(1) to O(log n), both being faster time complexities than O(n). 
+
+**Visualization**
+~~~
+     Node                Node                Node
+[data | address] -> [data | address] -> [data | address]
+~~~
