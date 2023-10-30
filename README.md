@@ -378,3 +378,11 @@ Linked-lists generally waste no to little memory but tend to overall have a grea
      Node                Node                Node
 [data | address] -> [data | address] -> [data | address]
 ~~~
+
+**Implementation** 
+[Implementation Link](https://github.com/CP21H/dsi/blob/main/include/dsi/linked_list.h)
+
+**Line by Line Explanation**
+
+`template <typename T> class Node {}`
+> write description for node class which is used as indexs in the linked list, storing data, and address of next item
