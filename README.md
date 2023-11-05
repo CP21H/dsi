@@ -385,4 +385,25 @@ Linked-lists generally waste no to little memory but tend to overall have a grea
 **Line by Line Explanation**
 
 `template <typename T> class Node {}`
-> write description for node class which is used as indexs in the linked list, storing data, and address of next item
+> Creates a `Node` class which is used as part of the linked-list data structure. Each `Node` represents an element in a linked-list. Each `Node` has a value-address pair within it, storing data in one variable, and then uses a pointer to point to the next `Node` in the linked-list.
+
+~~~C++
+public:
+  T data;
+  Node* next;
+~~~ 
+> Two public variables are created as part of the `Node` class. The `data` variable stores data of an unknown type, `T`, while we create a `Node` pointer called `next`, which points towards an address in space which stores a `Node`.
+
+~~~C++
+//- Constructors
+Node() {
+  data = 0;
+  next = NULL;
+}
+
+Node(T data) {
+  this->data = data;
+  this->next = NULL;
+}
+~~~
+> continue here..
