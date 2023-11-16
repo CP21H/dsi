@@ -406,4 +406,7 @@ Node(T data) {
   this->next = NULL;
 }
 ~~~
-> continue here..
+> Default and Parameterized Constructors of a linked-list. The default constructor sets the value of `data` to 0 so that it is initialized but in generally empty, while the `next` pointer variable is set to NULL, since by default it will point to no address in memory. In the parameterized constructor, the same is done with `next`, but when some data is passed through, we initialize the `data` member variable with whatever data is being passed in.
+
+`template <typename T> class linked_list {}`
+> Creates a `linked-list` class which is the actual implementation of a linked-list using the `Node` class previously made. 
