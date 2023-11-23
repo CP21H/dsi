@@ -410,3 +410,32 @@ Node(T data) {
 
 `template <typename T> class linked_list {}`
 > Creates a `linked-list` class which is the actual implementation of a linked-list using the `Node` class previously made. 
+
+`Node<T>* head;`
+> Declare a `Node` of type `T` that points to the first node in the linked list, keeping track of the beginning of the linked list.
+
+~~~C++
+public:
+  //- Constructors
+  linked_list() { head = NULL; }
+~~~
+> Sets the `head` pointer `Node` equal to `NULL` by default. 
+
+~~~C++
+//- Public Member Functions
+void insert_node(T data) {
+  Node<T>* newNode = new Node<T>(data);
+
+  if (head == NULL) {
+    head = newNode;
+    return;
+  }
+
+  Node<T>* i = head;  // treated as an iterator through the linked list
+  while (i->next != NULL) {
+    i = i->next;
+  }
+  i->next = newNode;
+}
+~~~
+> CONTINUE FROM HERE...
