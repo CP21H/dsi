@@ -438,4 +438,43 @@ void insert_node(T data) {
   i->next = newNode;
 }
 ~~~
-> CONTINUE FROM HERE...
+> Creation of a function `insert_node` which takes in a variable `T data` of unknown type. This function first creates a new `Node` pointer of unknown type, and assigning it the data that has been passed into the function. A quick check is done to see whether or not there is a `Node` in the linked list, and if there isn't, the newly created `Node` is made the `head` of the Linked List. If there is already a `Node` in the linked list acting as the `head`, then we create an iterator for the linked list called `i`. Through the `while-loop`, we walk through the linked list as long as the next item is not `NULL`, if the next item IS `NULL`, meaning that index is open to add to, then we set `i` equal to the next open spot in the list, then setting `i->next`, which is the next open spot, equal to the new `Node`.
+
+~~~C++
+void delete_node(int nodeOffset) {
+  Node<T> *i = head, *j = NULL;
+  int length = 0;
+
+  if (head == NULL) {
+    std::cout << "List empty" << std::endl;
+    return;
+  }
+
+  while (i != NULL) {
+    i = i->next;
+    length++;
+  }
+
+  if (length < nodeOffset) {
+    std::cout << "Index out of range" << std::endl;
+    return;
+  }
+
+  i = head;
+  if (nodeOffset == 1) {
+    head = head->next;
+    delete i;
+    return;
+  }
+
+  while (nodeOffset-- > 1) {
+    j = i;
+    i = i->next;
+  }
+            
+  j->next = i->next;
+  delete i;
+}
+
+~~~
+> 
