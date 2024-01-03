@@ -1,0 +1,32 @@
+//
+// Created by Cristhian Prado on 8/13/2023.
+//
+
+#include <iostream>
+#include "include/dsi/algorithms.h"
+#include "include/dsi/vector.h"
+#include "include/dsi/stack.h"
+#include "include/dsi/queue.h"
+#include "include/dsi/priority_queue.h"
+
+int main() {
+    int a[] = {10,11,12,45,63,32,3,9,10,23,27,1,34,12};
+    int length = 14;
+
+    /*
+     *  In order to use one of the following sorting algorithms, uncomment one of them out at a time.
+     * */
+     
+    //algorithms::bubble_sort(a, length);
+    //algorithms::selection_sort(a, length);
+    //algorithms::insertion_sort(a, length);
+    //algorithms::merge_sort(a, length);
+    //algorithms::quick_sort(a, 0, length - 1);
+
+
+    for (int i = 0; i < length; i++) {
+        std::cout << a[i] << " ";
+    }
+
+    return 0;
+}
