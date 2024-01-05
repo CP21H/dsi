@@ -1,0 +1,57 @@
+//
+// Created by Cristhian Prado on 8/13/2023.
+//
+
+#include <iostream>
+#include "include/dsi/algorithms.h"
+#include "include/dsi/vector.h"
+#include "include/dsi/stack.h"
+#include "include/dsi/queue.h"
+#include "include/dsi/priority_queue.h"
+
+int main() {
+    vector<int> integer_vector;
+
+    // Testing capacity-related functions
+    std::cout << "Initial size: " << integer_vector.get_size() << std::endl;
+    std::cout << "Initial capacity: " << integer_vector.get_capacity() << std::endl;
+    integer_vector.empty(); // Should indicate it's empty initially
+
+    // Testing addition of elements
+    integer_vector.add_back(5);
+    integer_vector.add_back(10);
+    integer_vector.add_back(15);
+
+    // Testing element access and printing
+    integer_vector.print(); // Should print the added elements
+
+    std::cout << "Front element: " << integer_vector.front() << std::endl;
+    std::cout << "Back element: " << integer_vector.back() << std::endl;
+    std::cout << "Element at index 1: ";
+    integer_vector.at(1); // Should print the element at index 1
+    std::cout << "" << std::endl;
+
+    // Testing removal and modification
+    integer_vector.remove(1); // Removing element at index 1
+    std::cout << "Vector after removing the element at index 1:" << std::endl;
+    integer_vector.print(); // Should print the modified vector
+
+    integer_vector.add_at(100, 1); // Adding 100 at index 1
+    std::cout << "Vector after adding a `100` at index 1:" << std::endl;
+    integer_vector.print(); // Should print the modified vector
+
+    integer_vector.swap(0, 1); // Swapping elements at indices 0 and 1
+    std::cout << "Vector after swapping value at index 0 and 1:" << std::endl;
+    integer_vector.print(); // Should print the modified vector
+
+    integer_vector.reverse(); // Reversing the vector
+    std::cout << "Vector after reversing the entire vector:" << std::endl;
+    integer_vector.print(); // Should print the reversed vector
+
+    // Testing resizing
+    integer_vector.resize(10); // Resizing the vector
+    std::cout << "Resized vector size: " << integer_vector.get_size() << std::endl;
+    std::cout << "Resized vector capacity: " << integer_vector.get_capacity() << std::endl;
+
+    return 0;
+}
