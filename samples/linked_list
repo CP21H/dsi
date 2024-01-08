@@ -1,0 +1,36 @@
+//
+// Created by Cristhian Prado on 8/13/2023.
+//
+
+#include <iostream>
+#include "linked_list.h"
+
+int main() {
+    // Create a linked list of integers
+    linked_list<int> int_list;
+
+    // Insert nodes into the linked list
+    int_list.insert_node(10);
+    int_list.insert_node(20);
+    int_list.insert_node(30);
+
+    // Print the current linked list
+    std::cout << "Current Linked List: ";
+    int_list.print();
+    std::cout << std::endl;
+
+    // Delete a node from the linked list
+    std::cout << "After deleting node at index 2:" << std::endl;
+    int_list.delete_node(2);
+    int_list.print();
+    std::cout << std::endl;
+
+    // Insert more nodes and print the updated linked list
+    int_list.insert_node(40);
+    int_list.insert_node(50);
+    std::cout << "After inserting nodes:" << std::endl;
+    int_list.print();
+    std::cout << std::endl;
+
+    return 0;
+}
