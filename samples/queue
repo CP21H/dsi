@@ -1,0 +1,45 @@
+//
+// Created by Cristhian Prado on 8/13/2023.
+//
+
+#include <iostream>
+#include "queue.h"
+
+int main() {
+    // Create a queue of doubles
+    queue<double> double_queue;
+
+    // Add elements to the queue
+    double_queue.add(3.14);
+    double_queue.add(2.718);
+    double_queue.add(1.618);
+
+    // Print the current queue
+    std::cout << "Current Queue:" << std::endl;
+    double_queue.print();
+
+    // Get the first and last elements
+    std::cout << "First element: " << double_queue.first() << std::endl;
+    std::cout << "Last element: " << double_queue.last() << std::endl;
+
+    // Check queue size and capacity
+    std::cout << "Queue size: " << double_queue.get_size() << std::endl;
+    std::cout << "Queue capacity: " << double_queue.get_capacity() << std::endl;
+
+    // Check if the queue is empty
+    double_queue.empty();
+
+    // Remove an element
+    double_queue.remove();
+    std::cout << "After removing an element:" << std::endl;
+    double_queue.print();
+
+    // Add more elements to test capacity expansion
+    double_queue.add(5.0);
+    double_queue.add(10.0);
+    double_queue.add(20.0);
+    std::cout << "After adding more elements:" << std::endl;
+    double_queue.print();
+
+    return 0;
+}
