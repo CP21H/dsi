@@ -38,7 +38,7 @@ template <typename T> class queue {
 
     //--> Capacity
         void empty() {
-            if (size == capacity) {
+            if (size >= 1) {
                 std::cout << "Queue is not empty." << std::endl;
             } else {
                 std::cout << "Queue is empty." << std::endl;
