@@ -1,0 +1,41 @@
+//
+// Created by Cristhian Prado on 8/13/2023.
+//
+
+#include <iostream>
+#include "stack.h"
+
+int main() {
+    // Create a stack of integers
+    stack<int> int_stack;
+
+    // Add elements to the stack
+    int_stack.add(10);
+    int_stack.add(20);
+    int_stack.add(30);
+
+    // Print the current stack
+    std::cout << "Current Stack:" << std::endl;
+    int_stack.print();
+
+    // Get the top element
+    std::cout << "Top element: " << int_stack.top() << std::endl;
+
+    // Check stack size
+    std::cout << "Stack size: " << int_stack.get_size() << std::endl;
+
+    // Check if the stack is empty
+    int_stack.empty();
+
+    // Remove an element
+    int_stack.remove();
+    std::cout << "After removing an element:" << std::endl;
+    int_stack.print();
+
+    // Resize the stack
+    int_stack.resize(4);
+    std::cout << "After resizing to 4:" << std::endl;
+    int_stack.print();
+
+    return 0;
+}
