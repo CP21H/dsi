@@ -477,4 +477,24 @@ void delete_node(int nodeOffset) {
 }
 
 ~~~
-> 
+> Creation of a function `delete_node` which takes in a variable `nodeOffset` of type `Integer` which represents the index at which we want to delete a `Node`.
+
+> Firstly, we create two iterators for the Linked List, `i` and `j`, both of type `Node<T> *`. `i` is chosen to represent the `head` of the linked list, while `j` is chosen to act as a reserved second iterator for later use.
+
+> We then create an `Integer` variable `length` equal to zero, representing the length of the Linked List, a value which we will use later.
+
+> We then check our base case: `if(head == NULL)`, meaning that if the `head` is undefined, then we don't have a list to begin with, so simply print out that the list is empty and return.
+
+> The while loop `while(i != NULL)` iterates over the linked list incrementing the `length` variable under the condition that the iterator `i` has a `next` item after it, and if it does not, break out of the loop.
+
+> After incrementing the `length` variable in the while loop, we then check to see if the `length` of our linked list is less than the index we wish to remove at, `nodeOffset`, if it is, print out that the index is out of range and then return.
+
+> After these checks, set the iterator `i` back to `head`.
+
+> `if(nodeOffset == 1)` checks whether the index we want to remove from is the first item in the linked list. If it is, we set `head` equal to the next item in the linked list, which would always be the second item in the list as long as there is a second item, then we delete the item `i` points to, and then return.
+
+> `while(nodeOffset-- > 1)` means that while the index we want to remove from, `nodeOffset`, subtracted by 1 is still greater than 1, we set the iterator `i` equal to the `head`, since we had previously set the `i` iterator equal to the `head`. Note that `i` remains equalling to the `head` because it is implied that if we are running through this while loop, then the previous if-statement was not gone through. We then set `i` equal to its `next` node, meaning that this loop will make the `j` iterator refer to the `Node` before the one that is to be deleted, which is at `nodeOffset`, and then set `i` equal to that very index.
+
+> Then `j->next = i->next` sets `j` equal to the next `Node` `i` points to, which is after the `Node` we want to remove, essentially skipping the `Node` we want to delete.
+
+> Then once we are done updating our pointers, we delete the `Node` at `i`, freeing up the memory. 
